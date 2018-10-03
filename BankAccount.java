@@ -16,11 +16,21 @@ public class BankAccount {
      public void changePassword(String newPwd) {
           password = newPwd;
      }
+     public String toString() {
+          return accountID + "\t" + balance;
+     }
      public boolean deposit(double amount) {
           if ( amount < 0 ) {
                return false;
           }
           balance += amount;
+          return true;
+     }
+     public boolean withdraw(double amount) {
+          if ( amount < 0 || (balance - amount < 0) {
+               return false;
+          }
+          balance -= amount;
           return true;
      }
 }
