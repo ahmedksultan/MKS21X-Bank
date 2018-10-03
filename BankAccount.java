@@ -13,7 +13,7 @@ public class BankAccount {
      public int getAccountID() {
           return accountID;
      }
-     public void changePassword(String newPwd) {
+     public void setPassword(String newPwd) {
           password = newPwd;
      }
      public String toString() {
@@ -27,7 +27,7 @@ public class BankAccount {
           return true;
      }
      public boolean withdraw(double amount) {
-          if ( amount < 0 || (balance - amount < 0) {
+          if ( amount < 0 || (balance - amount < 0) ) {
                return false;
           }
           balance -= amount;
