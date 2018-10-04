@@ -33,4 +33,15 @@ public class BankAccount {
           balance -= amount;
           return true;
      }
+     public boolean authenticate(String pwd) {
+          return pwd.equals(password);
+     }
+     public boolean transferTo(BankAccount other, double amount, String pwd) {
+          if ( this.authenticate(pwd) ) {
+               if ( this.withdraw(amount) ) {
+                    return other.deposit(amount);
+               }
+          }
+          return false;
+     }
 }
